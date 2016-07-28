@@ -1,0 +1,55 @@
+<?php
+/**
+ * @file
+ * A simple module to create a Drupal Block programmatically,
+ * which then can be placed within any region using the block system.
+ * Created by:  Prof. James Barnett, Babson College 2013.
+ */
+
+function hms_search_name_directory_block_info() {
+  // This example comes from node.module.
+  $blocks['hms_search_name_directory'] = array(
+    'info' => t('HMS Search Name Directory'), 
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+function hms_search_name_directory_block_view($delta = '') {
+  // This example is adapted from node.module.
+  $block = array();
+
+  switch ($delta) {
+    case 'hms_search_name_directory':
+      /*$result = db_query("select n.title, u.uid, n.created from node n,
+                         users u where u.uid = n.uid order by n.created desc limit 5");
+      $content = "";
+      foreach($result as $row){
+        $content .= $row->title . '</br>';
+      }*/
+      drupal_add_js(drupal_get_path('module', 'hms_search_name_directory') . '/js/hms_search_name_directory.js', array(
+    'scope' => 'footer'));
+  $output =  array(
+    'first_para' => array(
+      '#type' => 'markup',
+      '#markup' => '
+
+<hello-world>Loading...</hello-world>',
+      '#attached' => array(
+        'js' => array(
+          'https://rawgithub.com/systemjs/systemjs/0.19.6/dist/system.js',
+          'https://code.angularjs.org/tools/typescript.js',
+          'https://code.angularjs.org/2.0.0-beta.0/angular2-polyfills.js',
+          'https://code.angularjs.org/2.0.0-beta.0/Rx.js',
+          'https://code.angularjs.org/2.0.0-beta.0/angular2.dev.js',
+        ),
+      ),
+    )
+  );
+
+      $block['subject'] = t('HMS Search Name Directory');
+      $block['content'] = $output;
+      break;
+  }
+  return $block;
+}

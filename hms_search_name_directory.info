@@ -1,0 +1,4 @@
+name = HMS Search Name Directory 
+description = A module to create a Drupal Block programmatically, to programmatically search the directory by first and last name.
+package = HMS custom code 
+core = 7.x

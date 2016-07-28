@@ -1,0 +1,9 @@
+<h1>Students:</h1>
+<label for="newStudentName"></label>
+<input type="text" name="newStudentName" placeholder="newStudentName" #newStudentElem>
+<button (click)="addNewStudent(newStudentElem.value)">Add New Student</button>
+<br>
+<input type="text" placeholder="Search" #queryElem (keyup)="0">
+<ul>
+  <li *ngFor="#student of students | sortByName:queryElem.value ">{{student.name}}</li>
+</ul>
