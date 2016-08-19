@@ -37,11 +37,11 @@ function hms_search_name_directory_block_view($delta = '') {
 <hello-world>Loading...</hello-world>',
       '#attached' => array(
         'js' => array(
-          'https://rawgithub.com/systemjs/systemjs/0.19.6/dist/system.js',
-          'https://code.angularjs.org/tools/typescript.js',
-          'https://code.angularjs.org/2.0.0-beta.0/angular2-polyfills.js',
-          'https://code.angularjs.org/2.0.0-beta.0/Rx.js',
-          'https://code.angularjs.org/2.0.0-beta.0/angular2.dev.js',
+          'sites/all/modules/custom/hms_search_name_directory/js/system.js',
+          'sites/all/modules/custom/hms_search_name_directory/js/typescript.js',
+          'sites/all/modules/custom/hms_search_name_directory/js/angular2-polyfills.js',
+          'sites/all/modules/custom/hms_search_name_directory/js/Rx.js',
+          'sites/all/modules/custom/hms_search_name_directory/js/angular2.dev.js',
         ),
       ),
     )
